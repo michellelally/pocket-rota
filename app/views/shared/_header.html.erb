@@ -14,8 +14,8 @@
       </div>
       <div class="items-center block w-full mt-2 text-center lg:flex lg:flex-row lg:flex-1 lg:mt-0 lg:text-left lg:justify-end">
         <% if user_signed_in? %>
-                    <%= link_to "Dashboard", root_path, class: "btn btn-default mr-2" %>
-            <%= link_to "Schedule new session", root_path, class: "btn btn-default mr-2" unless admin? %>
+                    <%= link_to "Dashboard", root_path, class:"btn btn-default mb-2 lg:mr-2 lg:mb-0 block" %>
+            <%= link_to "Schedule new shifts", root_path, class:"btn btn-default mb-2 lg:mr-2 lg:mb-0 block" unless admin? %>
             <%= link_to "Users", root_path, class: "btn btn-default mr-2" if admin? %>
           <%= link_to "Edit account", edit_user_registration_path, class: "btn btn-default mb-2 lg:mr-2 lg:mb-0 block" %>
           <%= link_to "Log out", destroy_user_session_path, method: :delete, class:"btn btn-default mb-2 lg:mb-0 block" %>
