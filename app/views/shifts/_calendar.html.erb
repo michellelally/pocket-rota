@@ -1,5 +1,5 @@
 <%= month_calendar events: shifts do |date, shifts| %>
-  <%= date %>
+  <%= date.day %>
   <% shifts.each do |shift| %>
     <div>
       <%= link_to shift.name, shift, class: "link" %>
