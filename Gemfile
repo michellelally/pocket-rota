@@ -52,6 +52,10 @@ group :test do
   gem 'webdrivers'
 end
 
+gem 'simple_calendar', '~> 2.3'
+gem 'trix', '~> 0.9.9'
+gem 'redis', '~> 4.0'
+
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'devise', '~> 4.7', '>= 4.7.3'
