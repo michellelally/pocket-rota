@@ -23,7 +23,7 @@ class ShiftsController < ApplicationController
   # POST /shifts or /shifts.json
   def create
     @shift = Shift.new(shift_params)
-    @meeting.user_id = current_user.id
+    @shift.user_id = current_user.id
 
     respond_to do |format|
       if @shift.save
