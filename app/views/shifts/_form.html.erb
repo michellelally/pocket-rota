@@ -1,32 +1,41 @@
-<%= form_with(model: shift) do |form| %>
+<div class="p-10 bg-white border border-grey-light rounded">
+<%= form_with(model: shift, local: true, class: "shift-form") do |form| %>
   <% if shift.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(shift.errors.count, "error") %> prohibited this shift from being saved:</h2>
 
       <ul>
-        <% shift.errors.each do |error| %>
-          <li><%= error.full_message %></li>
-        <% end %>
+      <% shift.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
       </ul>
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name %>
+  <h3 class="mb-4">Shift Information</h3>
+
+  <div class="mb-6">
+    <%= form.label :name, class: "label" %>
+    <%= form.text_field :name, class: "input" %>
+  </div>
+
+  <div class="mb-6">
+    <%= form.label :start_time, class: "label" %>
+    <div class="flex items-center justify-between max-w-l">
+      <%= form.datetime_select :start_time, { start_day: Date.today, start_year: Date.today.year, minute_step: 15 }, { class: "select py-2 px-2 mr-2" } %>
+    </div>
   </div>
 
   <div class="field">
-    <%= form.label :start_time %>
-    <%= form.datetime_select :start_time %>
+    <%= form.label :end_time, class: "label" %>
+    <div class="flex items-center justify-between max-w-lg">
+      <%= form.datetime_select :end_time, { start_day: Date.today, start_year: Date.today.year, minute_step: 15 }, { class: "select py-2 px-2 mr-2" } %>
+    </div>
   </div>
 
-  <div class="field">
-    <%= form.label :end_time %>
-    <%= form.datetime_select :end_time %>
-  </div>
+  <hr class="border" />
 
-  <div class="actions">
-    <%= form.submit %>
-  </div>
+  <%= form.submit class: "btn bg-indigo-600 text-white text-base py-3 px-5" %>
+
 <% end %>
+</div>
