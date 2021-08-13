@@ -1,0 +1,39 @@
+<nav class="bg-white mb-4 shadow rounded">
+  <ul id="nav-tab" class="tabs list-reset flex">
+
+     <li data-tab="all-employees">
+      <%= link_to "#all-employees", class: "tab flex items-center" do %>
+        <svg viewBox="0 0 20 20" class="fill-current text-grey-light mr-2" width="16" height="16"><title>coffee</title><path d="M4 11H2a2 2 0 0 1-2-2V5c0-1.1.9-2 2-2h2V1h14v10a4 4 0 0 1-4 4H8a4 4 0 0 1-4-4zm0-2V5H2v4h2zm-2 8v-1h18v1l-4 2H6l-4-2z"></path></svg>
+      All employees
+      <% end %>
+    </li>
+
+  </ul>
+</nav>
+
+<h1>Employees</h1> 
+
+<div class="bg-white p-10 border rounded">
+  <div id="all-employees" class="tab-panel active">
+
+     <% employees.each do |employee| %>
+        <div class="flex flex-wrap items-center justify-start p-4 border-b border-grey-light mb-6">
+          <div class="flex-1 flex justify-between">
+            <div>
+              <%= link_to employee.name, employee, class: "link mr-4" %>
+            </div>
+            <div>
+              <%= employee.position %> &ndash;
+              <%= employee.availability %>
+            </div>
+          </div>
+        </div>
+
+
+
+     <% end %>
+  </div>
+
+</div>
+
+

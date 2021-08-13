@@ -36,7 +36,7 @@
           </div>
         </div>
 
-        <%= link_to "Cancel Shift", shift, method: :delete, data: { confirm: "Are you sure? There are no refunds." }, class: "btn btn-destroy ml-4" if admin? %>
+        <%= link_to "Cancel Shift", shift, method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-destroy ml-4" if admin? %>
      <% end %>
   </div>
 

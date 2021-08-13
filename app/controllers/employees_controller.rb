@@ -1,13 +1,15 @@
 class EmployeesController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_employee, only: %i[ show edit update destroy ]
 
   # GET /employees or /employees.json
   def index
-    @employees = Employee.all
+    @employees = current_user.employees.all
   end
 
   # GET /employees/1 or /employees/1.json
   def show
+    
   end
 
   # GET /employees/new
@@ -22,6 +24,7 @@ class EmployeesController < ApplicationController
   # POST /employees or /employees.json
   def create
     @employee = Employee.new(employee_params)
+    @employee.user_id = current_user.id
 
     respond_to do |format|
       if @employee.save

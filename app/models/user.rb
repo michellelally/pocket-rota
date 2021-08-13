@@ -7,4 +7,5 @@ has_person_name
          :recoverable, :rememberable, :validatable
 
   has_many :shifts, dependent: :destroy
+  has_many :employees, dependent: :destroy
 end
