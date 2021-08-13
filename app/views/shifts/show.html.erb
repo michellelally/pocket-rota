@@ -1,17 +1,18 @@
-<p>
-  <strong>Name:</strong>
-  <%= @shift.name %>
-</p>
 
-<p>
-  <strong>Start time:</strong>
-  <%= @shift.start_time %>
-</p>
 
-<p>
-  <strong>End time:</strong>
-  <%= @shift.end_time %>
-</p>
 
-<%= link_to 'Edit', edit_shift_path(@shift) %> |
-<%= link_to 'Back', shifts_path %>
+<div class="max-w-md my-5 m-auto p-6 lg:p-16 bg-white rounded border border-grey-light text-center shadow">
+               <h1 class="font-bold"><%= @shift.name %></h1><br>
+      <%= link_to "Cancel shift", shift_path(@shift), method: :delete, data: { confirm: "Are you sure you want to cancel? "}, class: "btn btn-destroy" if admin? %>
+   <div class="mb-5 flex items-center justify-between">
+
+      <p class="border-2 py-3 px-4 border-indigo rounded-full text-sm text-indigo">
+        Start time <br>
+        <span class="font-bold text-indigo-600"><%= readable_time(@shift.start_time) %></span>
+      </p>
+      <div class="border-t-2 border-indigo-light border-dashed h-1 flex-1"></div>
+      <p class="border-2 py-3 px-4 border-indigo rounded-full text-sm text-indigo">
+        End time <br> <span class="font-bold text-indigo-600"><%= readable_time(@shift.end_time) %></span>
+      </p>
+    </div>
+</div>
