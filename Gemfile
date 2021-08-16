@@ -54,7 +54,7 @@ end
 
 gem 'simple_calendar', '~> 2.3'
 gem 'trix', '~> 0.9.9'
-gem 'redis', '~> 4.0'
+gem 'json', '~> 2.5', '>= 2.5.1'
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
@@ -62,3 +62,4 @@ gem 'devise', '~> 4.7', '>= 4.7.3'
 gem 'friendly_id', '~> 5.4', '>= 5.4.1'
 gem 'sidekiq', '~> 6.1', '>= 6.1.2'
 gem 'name_of_person', '~> 1.1', '>= 1.1.1'
+
