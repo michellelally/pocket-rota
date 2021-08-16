@@ -5,10 +5,18 @@ class EventsController < ApplicationController
 		require 'net/http'
 		require 'json'
 
-		@url = 'https://app.ticketmaster.com/discovery/v2/events.json?city=Dublin&apikey=QsWcrQFrgyG0ZJHKkHZ85ugZsxBsBCLf'
+		@the_city = "Galway"
+
+		@url = "https://app.ticketmaster.com/discovery/v2/events.json?city=#{@the_city}&apikey=QsWcrQFrgyG0ZJHKkHZ85ugZsxBsBCLf"
 		@uri = URI(@url)
 		@response = Net::HTTP.get(@uri)
 		@output = JSON.parse(@response)
-	end
 
+		if @output.empty?
+			@final_output = "Error"
+		else 
+			@final_output = @output
+		end
+
+	end
 end
