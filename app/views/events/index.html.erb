@@ -8,6 +8,20 @@
 <div class="bg-white p-10 border rounded">
   <div id="all-events" class="tab-panel active">
 
+
+     <% @final_output["_embedded"]["events"].each do |event| %>
+        <div class="flex flex-wrap items-center justify-start p-4 border-b border-grey-light mb-6">
+          <div class="flex-1 flex justify-between">
+            <div>
+              <%= event["name"] %> &ndash;
+            </div>
+          </div>
+        </div>
+
+
+
+     <% end %>
+
   <%= @final_output %>
   </div>
 
