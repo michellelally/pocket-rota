@@ -1,0 +1,50 @@
+<h1>Events</h1>
+<h2>Know when to schedule more staff on due to possible crowds in town for these events</h2>
+
+
+<h1>events</h1> 
+
+<div class="bg-white p-10 border rounded">
+  <div id="all-events" class="tab-panel active">
+
+     <% events.each do |event| %>
+        <div class="flex flex-wrap items-center justify-start p-4 border-b border-grey-light mb-6">
+          <div class="flex-1 flex justify-between">
+
+            <div>
+              <%= event.city %>
+            </div>
+          </div>
+        </div>
+
+
+
+     <% end %>
+  </div>
+
+
+<section class="container px-6 py-4 mx-auto">
+  <div class="grid gap-6 mb-8 md:grid-cols-1 lg:grid-cols-2">
+    <!-- Card 1 -->
+      <% @final_output["_embedded"]["events"].each do |event| %>
+     <div class="flex items-center p-4 bg-white border-2 border-gray-200 rounded-lg shadow-sm dark:bg-gray-800">
+        <img alt="mountain" class="w-40 rounded-md border-2 border-gray-300" src=<%= event["images"][0]["url"] %> />
+
+         <div id="body" class="flex flex-col ml-5">
+
+            <h4 id="name" class="text-xl font-semibold mb-2">
+              <%= event["name"] %></h4>
+
+            <p id="job" class="text-gray-800 mt-2">
+            Date: <%= event["dates"]["start"]["localDate"] %> 
+            <br>
+            Time: <%= event["dates"]["start"]["localTime"] %>
+            <br>
+          </p>
+         </div>
+    </div>
+    <% end %>
+  </div>
+ 
+</div>
+</section>

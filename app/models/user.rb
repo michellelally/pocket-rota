@@ -8,4 +8,5 @@ has_person_name
 
   has_many :shifts, dependent: :destroy
   has_many :employees, dependent: :destroy
+  has_many :events, dependent: :destroy
 end
