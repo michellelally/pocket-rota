@@ -1,6 +1,5 @@
 <div class="max-w-md my-5 m-auto p-6 lg:p-16 bg-white rounded border border-grey-light text-center shadow">
                <h1 class="font-bold"><%= @employee.name %></h1><br>
-      <%= link_to "Cancel employee", employee_path(@employee), method: :delete, data: { confirm: "Are you sure you want to cancel? "}, class: "btn btn-destroy" if admin? %>
    <div class="mb-5 flex items-center justify-between">
 
       <p class="border-2 py-3 px-4 border-indigo rounded-full text-sm text-indigo">
@@ -10,6 +9,12 @@
       <div class="border-t-2 border-indigo-light border-dashed h-1 flex-1"></div>
       <p class="border-2 py-3 px-4 border-indigo rounded-full text-sm text-indigo">
         Availability <br> <span class="font-bold text-indigo-600"><%= @employee.availability %></span>
+
       </p>
-    </div>
+
+    </div>    
+    <%= link_to 'Back', employees_path %> |  
+    <%= link_to 'Add a new employee', new_employee_path %>  
+
 </div>
+  
