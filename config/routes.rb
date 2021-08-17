@@ -10,6 +10,8 @@ Rails.application.routes.draw do
   
   get 'restrictions' => 'restrictions#index'
 
+  get 'dashboard' => 'dashboard#index'
+
   devise_for :users
   root to: 'home#index'
 end
