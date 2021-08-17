@@ -1,9 +1,6 @@
 <h1>Events</h1>
 <h2>Know when to schedule more staff on due to possible crowds in town for these events</h2>
 
-
-<h1>events</h1> 
-
 <div class="bg-white p-10 border rounded">
   <div id="all-events" class="tab-panel active">
 
@@ -11,17 +8,13 @@
         <div class="flex flex-wrap items-center justify-start p-4 border-b border-grey-light mb-6">
           <div class="flex-1 flex justify-between">
 
-            <div>
-              <%= event.city %>
-            </div>
+            <p> Showing events for <%= event.city %>. Visit the dashboard if you would like to change the city. 
+            </p>
           </div>
         </div>
 
-
-
      <% end %>
   </div>
-
 
 <section class="container px-6 py-4 mx-auto">
   <div class="grid gap-6 mb-8 md:grid-cols-1 lg:grid-cols-2">

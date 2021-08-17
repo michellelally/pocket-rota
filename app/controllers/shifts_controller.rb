@@ -1,6 +1,8 @@
 class ShiftsController < ApplicationController
+  
   before_action :authenticate_user!
   before_action :set_shift, only: %i[ show edit update destroy ]
+  cookies[:user_id] = { :expires => Time.now + 3600}
 
   # GET /shifts or /shifts.json
   def index
