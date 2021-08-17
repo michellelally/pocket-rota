@@ -3,5 +3,6 @@
     <%= render "shifts_cta" %>
   <% else %>
     <%= render "shifts_landing",  shifts: @shifts %>
+    <%= render "all_shifts", shifts: @shifts %>
   <% end %>
 </div>

@@ -1,6 +1,5 @@
-<%= link_to 'Add a new employee', new_employee_path, class: "tab flex items-center"%> 
-<%= link_to "#all-employees", class: "tab flex items-center" do %>
-  All employees
+<%= link_to "#all-shifts", class: "tab flex items-center" do %>
+  All shifts
 <% end %>
 
 <div class="flex flex-col">
@@ -14,39 +13,34 @@
                 Name
               </th>
               <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                Position
+                Start time
               </th>
               <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                Availability
+                End time
               </th>
-              <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-              </th>
-              <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-              </th>
-              
             </tr>
           </thead>
           <tbody class="bg-white divide-y divide-gray-200">
 
 
-          <% employees.each do |employee| %>
+          <% shifts.each do |shift| %>
 
             <tr>
               <td class="px-6 py-4 whitespace-nowrap">
-                <div class="text-sm text-gray-900"><%= link_to employee.name, employee %> </div>
+                <div class="text-sm text-gray-900"><%= link_to shift.name, shift %> </div>
               </td>
               <td class="px-6 py-4 whitespace-nowrap">
-                <div class="text-sm text-gray-900"><%= employee.position %></div>
+                <div class="text-sm text-gray-900"><%= readable_time(shift.start_time) %></div>
               </td>
               <td class="px-6 py-4 whitespace-nowrap">
-              <div class="text-sm text-gray-500"><%= employee.availability %></div>
+              <div class="text-sm text-gray-500"><%= readable_time(shift.end_time) %></div>
               </td>
               <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-              <%= link_to 'Edit', edit_employee_path(employee) %>
+              <%= link_to 'Edit', edit_shift_path(shift) %>
               </td>
 
               <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-              <%= link_to 'Destroy', employee, method: :delete, data: { confirm: 'Are you sure?' } %>
+              <%= link_to 'Destroy', shift, method: :delete, data: { confirm: 'Are you sure?' } %>
               </td>
 
             </tr>

@@ -9,7 +9,7 @@ Rails.application.routes.draw do
     end
   
   get 'restrictions' => 'restrictions#index'
-    
+
   devise_for :users
   root to: 'home#index'
 end
