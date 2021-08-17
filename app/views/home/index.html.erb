@@ -1,16 +1,32 @@
-  <div class="bg-green-100 py-14">
+  
+  <div class="bg-green-100 py-10">
+  <div class="py-2 lg:py-2 px-4 border-b border-grey-light mb-4 text-indigo-darker">
+  <div class="container m-auto text-center">
+    <% unless user_signed_in? %>
+    <%= link_to "Sign Up", new_user_registration_path, class:"btn btn-primary my-3 mt-4 text-gray-600" %>
+    <% else %>
+    <%= link_to "Schedule a new session", new_shift_path, class:"btn btn-primary my-3 mt-4 text-gray-600" %>
+    <% end %>
+  </div>
+</div>
+  <h1 class="text-3xl tracking-widest text-green-600 text-center">WELCOME TO POCKET ROTA</h1>
+  <br>
     <h3 class="text-2xl tracking-widest text-green-600 text-center">FEATURES</h3>
+
+   
+
+
 
     <!-- Box -->
     <div class="md:flex md:justify-center md:space-x-8 md:px-14">
       <!-- box-1 -->
       <div class="mt-16 py-4 px-4 bg-whit w-72 bg-white rounded-xl shadow-lg hover:shadow-xl transform hover:scale-110 transition duration-500 mx-auto md:mx-0">
         <div class="w-sm">
+        <a hidden href='https://www.freepik.com/vectors/calendar'>Calendar vector created by pch.vector - www.freepik.com</a>
         <%= image_tag 'calendar.jpg', alt: "Move forward", width: 320 %>
         <div class="mt-4 text-green-600 text-center">
             <h1 class="text-xl font-bold">Shifts</h1>
             <p class="mt-4 text-gray-600">Conveniently scheduled shifts for your employees and see them displayed on a calendar</p>
-            <button class="mt-8 mb-4 py-2 px-14 rounded-full bg-green-600 text-white tracking-widest hover:bg-green-500 transition duration-200">MORE</button>
           </div>
         </div>
       </div>
@@ -18,11 +34,11 @@
       <!-- box-2 -->
       <div class="mt-16 py-4 px-4 bg-whit w-72 bg-white rounded-xl shadow-lg hover:shadow-xl transform hover:scale-110 transition duration-500 mx-auto md:mx-0">
         <div class="w-sm">
+        <a hidden href='https://www.freepik.com/vectors/business'>Business vector created by vectorjuice - www.freepik.com</a>
         <%= image_tag 'hands.jpg', alt: "Move forward", width: 320 %>
           <div class="mt-4 text-green-600 text-center">
             <h1 class="text-xl font-bold">Employees</h1>
             <p class="mt-4 text-gray-600">Keep your employees and their information up to date from the palm of your hand</p>
-            <button class="mt-8 mb-4 py-2 px-14 rounded-full bg-green-600 text-white tracking-widest hover:bg-green-500 transition duration-200">MORE</button>
           </div>
         </div>
       </div>
@@ -30,11 +46,11 @@
       <!-- box-3 -->
       <div class="mt-16 py-4 px-4 bg-whit w-72 bg-white rounded-xl shadow-lg hover:shadow-xl transform hover:scale-110 transition duration-500 mx-auto md:mx-0">
         <div class="w-sm"><br>
+        <a hidden href='https://www.freepik.com/vectors/business'>Business vector created by vectorjuice - www.freepik.com</a>
         <%= image_tag 'news.jpg', alt: "Move forward", width: 320 %>
           <div class="mt-4 text-green-600 text-center">
             <h1 class="text-xl font-bold">News</h1>
             <p class="mt-4 text-gray-600">Stay updated on events and restrictions in your area which may effect your personnel</p>
-            <button class="mt-8 mb-4 py-2 px-14 rounded-full bg-green-600 text-white tracking-widest hover:bg-green-500 transition duration-200">MORE</button>
           </div>
         </div>
       </div>
@@ -42,14 +58,15 @@
   </div>
 </header>
 
+
 <!-- Footer -->
 <footer class="text-center py-16 bg-gray-700 text-sm">
   <p class="text-white">
-    Sample text. Click to select the text box. Click again or double <br />
-    click to start editing the text.
+    <br><br>
+    Pocket Rota
+    <br>
+    Cloud Applications Development Project 2021
+    <br><br>
   </p>
-  <p class="mt-20 text-white"><span class="underline text-green-200 cursor-pointer">Website Templates </span>created with <span class="underline text-green-200 cursor-pointer">Website Builder Software.</span></p>
+  <p class="mt-20 text-white">Michelle Lally <br> x20194269</p>
 </footer>
-<a href='https://www.freepik.com/vectors/calendar'>Calendar vector created by pch.vector - www.freepik.com</a>
-<a href='https://www.freepik.com/vectors/business'>Business vector created by vectorjuice - www.freepik.com</a>
-<a href='https://www.freepik.com/vectors/business'>Business vector created by vectorjuice - www.freepik.com</a>
