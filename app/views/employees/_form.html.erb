@@ -1,32 +1,39 @@
-<%= form_with(model: employee) do |form| %>
+<div class="flex flex-row justify-center items-center">
+<div class="p-10 bg-white border border-grey-light rounded">
+<%= form_with(model: employee, local: true, class: "employee-form") do |form| %>
   <% if employee.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(employee.errors.count, "error") %> prohibited this employee from being saved:</h2>
 
       <ul>
-        <% employee.errors.each do |error| %>
-          <li><%= error.full_message %></li>
-        <% end %>
+      <% employee.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
       </ul>
     </div>
   <% end %>
 
-  <div class="field">
-  <%= form.label :name %>
-  <%= form.text_field :name %>
+  <h3 class="mb-4">Employee Information</h3>
+
+  <div class="mb-6">
+    <%= form.label :name, class: "label" %>
+    <%= form.text_field :name, class: "input" %>
+  </div>
+
+  <div class="mb-6">
+  <%= form.label :position, class: "label" %>
+  <%= form.text_field :position, class: "input" %>
 </div>
 
-  <div class="field">
-    <%= form.label :position %>
-    <%= form.text_field :position %>
-  </div>
+<div class="mb-6">
+<%= form.label :availability, class: "label" %>
+<%= form.text_field :availability, class: "input" %>
+</div>
 
-  <div class="field">
-    <%= form.label :availability %>
-    <%= form.text_field :availability %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
+  
+  <hr class="border" /> <br>
+  
+  <%= form.submit class: "btn bg-indigo-600  rounded-full text-white text-base py-3 px-5" %>
 <% end %>
+</div>
+</div>
