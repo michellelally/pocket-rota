@@ -16,6 +16,7 @@ class RestrictionsController < ApplicationController
     else 
       @final_output = @output
     end
+    
   end 
 
 end
