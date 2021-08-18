@@ -1,9 +1,11 @@
+<div class="flex flex-row justify-center items-center">
+
     <div class="flex space-x-10 pt-10">
     <div class="py-12">
       <div class="bg-white pt-4 p-7 rounded-xl space-y-6 overflow-hidden center transition-all duration-500 transform hover:-translate-y-6 hover:scale-105 shadow-xl hover:shadow-2xl cursor-pointer">
 
           <h1 class="text-4xl text-center font-bold">Indoor Dining</h1>
-          <ul class="text-center">
+          <ul class="text-center list-disc">
             <li class="p-2 font-semibold"><%= @final_output["restrictions"]["indoorDining"][0]["allowed"] %></li>
             <li class="p-2 font-semibold"><%= @final_output["restrictions"]["indoorDining"][0]["vaccination"] %></li>
             <li class="p-2"><%= @final_output["restrictions"]["indoorDining"][0]["proof"] %></li>
@@ -19,7 +21,7 @@
     <div class="bg-white pt-4 p-7 rounded-xl space-y-6 overflow-hidden center transition-all duration-500 transform hover:-translate-y-6 hover:scale-105 shadow-xl hover:shadow-2xl cursor-pointer">
 
         <h1 class="text-4xl text-center font-bold">Outdoor Dining</h1>
-        <ul class="text-center">
+        <ul class="text-center  list-disc">
             <li class="p-2 font-semibold"><%= @final_output["restrictions"]["outdoorDining"][0]["allowed"] %></li>
             <li class="p-2 font-semibold"><%= @final_output["restrictions"]["outdoorDining"][0]["vaccination"] %></li>
             <li class="p-2"><%= @final_output["restrictions"]["outdoorDining"][0]["proof"] %></li>
@@ -33,4 +35,6 @@
 
 
   </div>
+
+  </div
 </div>

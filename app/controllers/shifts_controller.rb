@@ -5,7 +5,14 @@ class ShiftsController < ApplicationController
 
   # GET /shifts or /shifts.json
   def index
-    @shifts = current_user.shifts.all
+    
+    search = params[:term].present? ? params[:term] : '*'
+    @shifts = if search
+      Shift.search(search)
+    else 
+      @shifts = current_user.shifts.all
+    end
+    
   end
 
   # GET /shifts/1 or /shifts/1.json

@@ -2,6 +2,21 @@
   All shifts
 <% end %>
 
+<h1>Search</h1>
+
+<div>
+<%= form_tag shifts_path, class: 'navbar-form navbar-left', role: 'search', method: :get do |f| %>
+  
+  <div class='form-group'>
+  <%= text_field_tag :term, params[:term], class: 'form-control' %>
+  </div>
+  <%= button_tag "Search", class: 'btn btn-default', name: nil %>
+
+  <% end %>
+</div>
+
+<render @shifts %>
+
 <div class="flex flex-col">
   <div class="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
     <div class="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8">
