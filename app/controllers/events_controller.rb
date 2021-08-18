@@ -2,28 +2,28 @@ class EventsController < ApplicationController
   before_action :authenticate_user!
   before_action :set_event, only: %i[ show edit update destroy ]
 
-  # GET /events or /events.json
-  def index
-    @events = current_user.events.all
+    # GET /events or /events.json
+    def index
+      @events = current_user.events.all
 
-    require 'net/http'
-    require 'json'
+      require 'net/http'
+      require 'json'
 
-    @event_city = @events[0].city
-    cookies[:event_city] = @event_city
+      @event_city = @events[0].city
+      cookies[:event_city] = @event_city
 
-    @url = "https://app.ticketmaster.com/discovery/v2/events.json?city=#{@event_city}&apikey=QsWcrQFrgyG0ZJHKkHZ85ugZsxBsBCLf"
-    @uri = URI(@url)
-    @response = Net::HTTP.get(@uri)
-    @output = JSON.parse(@response)
+      @url = "https://app.ticketmaster.com/discovery/v2/events.json?city=#{@event_city}&apikey=QsWcrQFrgyG0ZJHKkHZ85ugZsxBsBCLf"
+      @uri = URI(@url)
+      @response = Net::HTTP.get(@uri)
+      @output = JSON.parse(@response)
 
-    if @output.empty?
-      @final_output = "Error"
-    else 
-      @final_output = @output
+      if @output.empty?
+        @final_output = "Error"
+      else 
+        @final_output = @output
+      end
+
     end
-
-  end
 
   # GET /events/1 or /events/1.json
   def show

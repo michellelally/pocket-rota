@@ -1,6 +1,16 @@
 <div class="max-w-lg m-auto ">
   <br>
+
   <%= render 'form', shift: @shift %>
+
+  <div>
+  <h1>Enter: </h1>
+  <%= form_tag "/hours" do %>
+  <%= text_field_tag :search %>
+  <%= submit_tag "Search" %>
+  <% end %>
+  <h3>Recommendations <%= @result %></h3>
+  </div>
 </div>
 
 

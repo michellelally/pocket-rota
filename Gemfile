@@ -63,4 +63,5 @@ gem 'friendly_id', '~> 5.4', '>= 5.4.1'
 gem 'sidekiq', '~> 6.1', '>= 6.1.2'
 gem 'name_of_person', '~> 1.1', '>= 1.1.1'
 gem 'searchkick'
+gem 'working_hours_ireland'
 

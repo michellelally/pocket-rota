@@ -1,3 +1,5 @@
+require 'working_hours_ireland'
+
 class ShiftsController < ApplicationController
   
   before_action :authenticate_user!
@@ -14,6 +16,13 @@ class ShiftsController < ApplicationController
     end
     
   end
+
+  def hours
+    @input = params[:search]
+    @result = Hours.run(@input)
+    flash[:notice] = @result
+    redirect_to request.referrer
+    end
 
   # GET /shifts/1 or /shifts/1.json
   def show
