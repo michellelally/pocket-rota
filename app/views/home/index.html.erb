@@ -1,13 +1,20 @@
   
   <div class="py-10">
+  
   <h1 class="text-3xl tracking-widest text-green-600 text-center">WELCOME TO POCKET ROTA</h1>
   <br>
     <h3 class="text-2xl tracking-widest text-green-600 text-center">FEATURES</h3>
 
    
+<div class="py-2 lg:py-2 px-4 border-b border-grey-light mb-4 text-indigo-darker">
+  <div class="container m-auto text-center">
+    <% unless user_signed_in? %>
+    <%= link_to "Create an account to begin", new_user_registration_path, class:"btn btn-primary my-3 mt-4 text-gray-600" %>
+    <% end %>
+  </div>
+</div>
 
-
-
+  <div class="mb-10">
     <!-- Box -->
     <div class="md:flex md:justify-center md:space-x-8 md:px-14">
       <!-- box-1 -->
@@ -47,7 +54,7 @@
       </div>
     </div>
   </div>
-</header>
+</div>
 
 
 <!-- Footer -->

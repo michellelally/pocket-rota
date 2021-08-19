@@ -1,7 +1,13 @@
-<p>
-  <strong>City:</strong>
-  <%= @event.city %>
-</p>
+<div class="flex flex-row justify-center items-center">
 
-<%= link_to 'Edit', edit_event_path(@event) %> |
-<%= link_to 'Back', events_path %>
+<div class="max-w-md my-5 m-auto p-10 lg:p-16 bg-white rounded border border-grey-light text-center shadow">
+      <p class="border-2 py-3 mb-5 px-4 border-indigo rounded-full text-sm text-indigo">
+        City <br>
+        <span class="font-bold  text-indigo-600"><%= @event.city %></span>
+      </p>
+   
+    <%= link_to 'Back', events_path %>
+    </div> 
+  
+</div>
+  

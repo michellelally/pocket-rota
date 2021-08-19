@@ -1,4 +1,9 @@
+require 'file_writer'
+
 class EmployeesController < ApplicationController
+  
+  require 'employee_decorator'
+
   before_action :authenticate_user!
   before_action :set_employee, only: %i[ show edit update destroy ]
 
@@ -25,6 +30,17 @@ class EmployeesController < ApplicationController
   def create
     @employee = Employee.new(employee_params)
     @employee.user_id = current_user.id
+
+    e = BasicEmployee.new(@employee.name, @employee.position, @employee.availability)
+
+    if params[:position].to_s.include?('Manager') || params[:position].to_s.include?('Supervisor') || params[:position].to_s.include?('Head')
+      e = ManagementEmployee.new(e)
+    end
+
+    @text = "A new employee was added: " + e.details
+    
+    write = FileWriter.instance
+    write.logInfo(@text)
 
     respond_to do |format|
       if @employee.save
