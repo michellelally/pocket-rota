@@ -18,5 +18,4 @@ class UsersController < ApplicationController
         cookies.delete :current_username
     end
 
-    
 end
