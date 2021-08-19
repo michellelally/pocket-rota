@@ -1,13 +1,13 @@
 require 'working_hours_ireland'
 
 class ShiftsController < ApplicationController
-  
   before_action :authenticate_user!
   before_action :set_shift, only: %i[ show edit update destroy ]
 
   # GET /shifts or /shifts.json
   def index
-    
+    @shifts = current_user.shifts.all
+
     search = params[:term].present? ? params[:term] : '*'
     @shifts = if search
       Shift.search(search)

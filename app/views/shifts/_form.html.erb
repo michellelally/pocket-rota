@@ -11,9 +11,7 @@
       </ul>
     </div>
   <% end %>
-
-  <h3 class="mb-4">Shift Information</h3>
-
+  
   <div class="mb-6">
     <%= form.label :name, class: "label" %>
     <%= form.text_field :name, class: "input" %>
@@ -33,11 +31,9 @@
     </div>
   </div>
 
+  <div class="flex flex-row justify-center items-center">
+    <%= form.submit class: "mt-8 py-2 px-14 rounded-full bg-green-600 text-white tracking-widest hover:bg-green-500 transition duration-200" %>
+  </div>
   
-  <hr class="border" /> <br>
-  
-
-  <%= form.submit class: "btn bg-indigo-600  rounded-full text-white text-base py-3 px-5" %>
-
 <% end %>
 </div>

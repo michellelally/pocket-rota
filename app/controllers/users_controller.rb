@@ -1,6 +1,10 @@
 class UsersController < ApplicationController
 
-    session[:current_user_id] = user.id
+    def index
+        session[:current_user_id] = user.id
+        session[:time] = Time.now
+    end
+
 
     def set_cookie 
         cookies.permanent.signed[:current_user_id] = current_user.id

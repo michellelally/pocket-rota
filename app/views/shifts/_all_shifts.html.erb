@@ -1,6 +1,6 @@
-<%= link_to "#all-shifts", class: "tab flex items-center" do %>
+<div class="tab flex items-center">
   All shifts
-<% end %>
+</div>
 
 <div class="flex justify-center items-center">
 
@@ -10,7 +10,7 @@
 <div class="flex justify-center items-center p-5">
 <br>
 <div>
-<%= form_tag shifts_path, class: 'navbar-form navbar-left', role: 'search', method: :get do |f| %>
+<%= form_tag shifts_path, class: " mb-4 py-2 px-14 rounded-full bg-green-600 text-white tracking-widest hover:bg-green-500 transition duration-200", role: 'search', method: :get do |f| %>
   
   <table>
     <tr>
@@ -18,7 +18,7 @@
       </td>
 
       <td>
-      <%= button_tag "Search", class: 'btn btn-default', name: nil %>
+      <%= button_tag "Search", class: " py-2 px-14 rounded-full bg-green-600 text-white tracking-widest hover:bg-green-500 transition duration-200", name: nil %>
 
       </td>
     </tr>
