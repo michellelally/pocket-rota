@@ -1,24 +1,21 @@
-<h1>Events</h1>
-<h2>Know when to schedule more staff on due to possible crowds in town for these events</h2>
+<h3 class="text-2xl tracking-widest text-green-600 text-center p-5">EVENTS</h3>
 
-<div class="bg-white p-10 border rounded">
+<div class="bg-white p-5 border rounded">
   <div id="all-events" class="tab-panel active">
 
      <% events.each do |event| %>
-        <div class="flex flex-wrap items-center justify-start p-4 border-b border-grey-light mb-6">
+        <div class="flex flex-wrap items-center justify-start p-2 border-b border-grey-light mb-6">
           <div class="flex-1 flex justify-between">
-
-            <p> Showing events for <%= event.city %>. Visit the dashboard if you would like to change the city. 
-            </p>
+            <h2 class="m-2 flex items-center p-4 bg-white border-2 border-gray-200 rounded-lg shadow-sm dark:bg-gray-800">Know when you should schedule more staff on due to possible crowds in town for these events</h2>
+            <p class="m-2 flex items-center p-4 bg-white border-2 border-gray-200 rounded-lg shadow-sm dark:bg-gray-800"> Showing events for <%= event.city %>. </p>   
+            <p class="m-2 flex items-center p-4 bg-white border-2 border-gray-200 rounded-lg shadow-sm dark:bg-gray-800"> <%= link_to 'Click here to change the city', new_event_path %> </p>
           </div>
         </div>
-
      <% end %>
   </div>
 
 <section class="container px-6 py-4 mx-auto">
   <div class="grid gap-6 mb-8 md:grid-cols-1 lg:grid-cols-2">
-    <!-- Card 1 -->
       <% @final_output["_embedded"]["events"].each do |event| %>
      <div class="flex items-center p-4 bg-white border-2 border-gray-200 rounded-lg shadow-sm dark:bg-gray-800">
         <img alt="mountain" class="w-40 rounded-md border-2 border-gray-300" src=<%= event["images"][0]["url"] %> />
@@ -27,13 +24,18 @@
 
             <h4 id="name" class="text-xl font-semibold mb-2">
               <%= event["name"] %></h4>
+              <table id="datetime" class="text-gray-800 mt-2">
 
-            <p id="job" class="text-gray-800 mt-2">
-            Date: <%= event["dates"]["start"]["localDate"] %> 
-            <br>
-            Time: <%= event["dates"]["start"]["localTime"] %>
-            <br>
-          </p>
+              <tr>
+                  <td class="font-semibold pr-3">Date</td>
+                  <td> <%= event["dates"]["start"]["localDate"] %>  </td>
+              </tr>
+
+              <tr>
+                <td class="font-semibold pr-3">Time</td>
+                <td> <%= event["dates"]["start"]["localTime"] %>  </td>
+              </tr>
+          </table>
          </div>
     </div>
     <% end %>

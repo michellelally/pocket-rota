@@ -10,7 +10,6 @@ class EventsController < ApplicationController
       require 'json'
 
       @event_city = @events[0].city
-      cookies[:event_city] = @event_city
 
       @url = "https://app.ticketmaster.com/discovery/v2/events.json?city=#{@event_city}&apikey=QsWcrQFrgyG0ZJHKkHZ85ugZsxBsBCLf"
       @uri = URI(@url)

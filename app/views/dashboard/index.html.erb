@@ -1,58 +1,56 @@
-<div class="bg-green-100 py-10s">
-<h3 class="text-2xl tracking-widest text-green-600 text-center">FEATURES</h3>
+<div>
+<h3 class="text-2xl tracking-widest text-green-600 text-center p-5">DASHBOARD</h3>
 
-<!-- Box -->
-<div class="md:flex md:justify-center md:space-x-8 md:px-14">
-  <!-- box-1 -->
-  <div class="mt-16 py-4 px-4 bg-whit w-72 bg-white rounded-xl shadow-lg hover:shadow-xl transform hover:scale-110 transition duration-500 mx-auto md:mx-0">
-    <div class="w-sm">
-    <a hidden href='https://www.freepik.com/vectors/calendar'>Calendar vector created by pch.vector - www.freepik.com</a>
-    <%= image_tag 'calendar.jpg', alt: "Move forward", width: 320 %>
-    <div class="mt-4 text-green-600 text-center">
-        <h1 class="text-xl font-bold">Shifts</h1>
-        <p class="mt-4 text-gray-600">Conveniently scheduled shifts for your employees and see them displayed on a calendar</p>
-        <button class="mt-8 mb-4 py-2 px-14 rounded-full bg-green-600 text-white tracking-widest hover:bg-green-500 transition duration-200">MORE</button>
+<div class="flex flex-row justify-center items-center">
+    <div class="flex space-x-10 pt-10">
+
+      <div class="py-12">
+        <div class="bg-white pt-4 p-7 rounded-xl space-y-6 overflow-hidden center transition-all duration-500 transform hover:-translate-y-6 hover:scale-105 shadow-xl hover:shadow-2xl cursor-pointer">
+
+            <h1 class="text-4xl text-center font-bold">Shifts</h1>
+            <ul class="text-center">
+              <li class="p-2">Access the calendar and all other shifts related tasks</li>
+              <br>
+              <%= link_to 'GO', shifts_path, class: "mt-8 mb-4 py-2 px-14 rounded-full bg-green-600 text-white tracking-widest hover:bg-green-500 transition duration-200" %>
+            </ul>
+        </div>
+      </div>
+
+      <div class="py-12">
+        <div class="bg-white pt-4 p-7 rounded-xl space-y-6 overflow-hidden center transition-all duration-500 transform hover:-translate-y-6 hover:scale-105 shadow-xl hover:shadow-2xl cursor-pointer">
+
+            <h1 class="text-4xl text-center font-bold">Employees</h1>
+            <ul class="text-center">
+                <li class="p-2">See your employees, edit them and add new ones</li>
+                <br>
+                <%= link_to 'GO', employees_path, class: "mt-8 mb-4 py-2 px-14 rounded-full bg-green-600 text-white tracking-widest hover:bg-green-500 transition duration-200" %>
+              </ul>
+        </div>
+      </div>
+
+      <div class="py-12">
+      <div class="bg-white pt-4 p-7 rounded-xl space-y-6 overflow-hidden center transition-all duration-500 transform hover:-translate-y-6 hover:scale-105 shadow-xl hover:shadow-2xl cursor-pointer">
+
+          <h1 class="text-4xl text-center font-bold">Restrictions</h1>
+          <ul class="text-center">
+              <li class="p-2">Take a look at what restrictions are currently in place</li>
+              <br>
+              <%= link_to 'GO', restrictions_path, class: "mt-8 mb-4 py-2 px-14 rounded-full bg-green-600 text-white tracking-widest hover:bg-green-500 transition duration-200" %>
+            </ul>
       </div>
     </div>
-  </div>
 
-  <!-- box-2 -->
-  <div class="mt-16 py-4 px-4 bg-whit w-72 bg-white rounded-xl shadow-lg hover:shadow-xl transform hover:scale-110 transition duration-500 mx-auto md:mx-0">
-    <div class="w-sm">
-    <a hidden href='https://www.freepik.com/vectors/business'>Business vector created by vectorjuice - www.freepik.com</a>
-    <%= image_tag 'hands.jpg', alt: "Move forward", width: 320 %>
-      <div class="mt-4 text-green-600 text-center">
-        <h1 class="text-xl font-bold">Employees</h1>
-        <p class="mt-4 text-gray-600">Keep your employees and their information up to date from the palm of your hand</p>
-        <button class="mt-8 mb-4 py-2 px-14 rounded-full bg-green-600 text-white tracking-widest hover:bg-green-500 transition duration-200">MORE</button>
+      <div class="py-12">
+      <div class="bg-white pt-4 p-7 rounded-xl space-y-6 overflow-hidden center transition-all duration-500 transform hover:-translate-y-6 hover:scale-105 shadow-xl hover:shadow-2xl cursor-pointer">
+
+          <h1 class="text-4xl text-center font-bold">Events</h1>
+          <ul class="text-center">
+              <li class="p-2">Check out events in your nearest city that may effect your staff needs</li>
+              <br>
+              <%= link_to 'GO', events_path, class: "mt-8 mb-4 py-2 px-14 rounded-full bg-green-600 text-white tracking-widest hover:bg-green-500 transition duration-200" %>
+          </ul>
       </div>
     </div>
-  </div>
 
-  <!-- box-3 -->
-  <div class="mt-16 py-4 px-4 bg-whit w-72 bg-white rounded-xl shadow-lg hover:shadow-xl transform hover:scale-110 transition duration-500 mx-auto md:mx-0">
-    <div class="w-sm"><br>
-    <a hidden href='https://www.freepik.com/vectors/business'>Business vector created by vectorjuice - www.freepik.com</a>
-    <%= image_tag 'news.jpg', alt: "Move forward", width: 320 %>
-      <div class="mt-4 text-green-600 text-center">
-        <h1 class="text-xl font-bold">News</h1>
-        <p class="mt-4 text-gray-600">Stay updated on events and restrictions in your area which may effect your personnel</p>
-        <button class="mt-8 mb-4 py-2 px-14 rounded-full bg-green-600 text-white tracking-widest hover:bg-green-500 transition duration-200">MORE</button>
-      </div>
-    </div>
   </div>
 </div>
-</div>
-</header>
-
-<!-- Footer -->
-<footer class="text-center py-16 bg-gray-700 text-sm">
-<p class="text-white">
-<br><br>
-Pocket Rota
-<br>
-Cloud Applications Development Project 2021
-<br><br><br>
-</p>
-<p class="mt-20 text-white">Michelle Lally <br> x20194269</p>
-</footer>
