@@ -64,6 +64,17 @@ class EmployeesController < ApplicationController
         format.json { render json: @employee.errors, status: :unprocessable_entity }
       end
     end
+
+    e = BasicEmployee.new(@employee.name, @employee.position, @employee.availability)
+
+    if params[:position].to_s.include?('Manager') || params[:position].to_s.include?('Supervisor') || params[:position].to_s.include?('Head')
+      e = ManagementEmployee.new(e)
+    end
+
+    # The error i got from using this line: uninitialized constant ActiveRecord::Observer
+    # observer = EmployeeObserver.instance
+    # observer.after_update(e)
+
   end
 
   # DELETE /employees/1 or /employees/1.json

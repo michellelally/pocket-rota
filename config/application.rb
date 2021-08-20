@@ -12,6 +12,7 @@ module Rota
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 6.1
 
+
     # Configuration for the application, engines, and railties goes here.
     #
     # These settings can be overridden in specific environments using the files
@@ -19,5 +20,11 @@ module Rota
     #
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
+    
+
+    # OBSERVER CONFIG THAT DIDN'T WORK
+    # the error i got from this line : undefined method `observers=' for ActiveRecord::Base:Clas
+    # config.active_record.observers = :employee_observer
+
   end
 end

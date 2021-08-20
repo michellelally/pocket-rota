@@ -7,7 +7,7 @@ class FileWriter
     end
 
     def logInformation(information)
-        @file_dir = "./employees.txt"
+        @file_dir = "lib/employees.txt"
         @file = File.open(@file_dir, "a")
         @file.write(information)
 
