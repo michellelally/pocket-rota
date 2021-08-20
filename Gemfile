@@ -67,3 +67,7 @@ gem 'searchkick'
 gem 'working_hours_ireland'
 gem 'activerecord-session_store'
 
+group :production do
+  gem 'pg'
+  gem 'rails_12factor'
+end
