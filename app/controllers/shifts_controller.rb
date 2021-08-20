@@ -7,16 +7,20 @@ class ShiftsController < ApplicationController
   # GET /shifts or /shifts.json
   def index
     @shifts = current_user.shifts.all
-
-    search = params[:term].present? ? params[:term] : '*'
-    @shifts = if search
-      Shift.search(search)
-    else 
-      @shifts = current_user.shifts.all
-    end
-    
+   
   end
 
+
+  def search 
+    @shifts = current_user.shifts.all
+    @search = params[:term].present? ? params[:term] : '*'
+    @shifts = if search
+      Shift.search(@search)
+    else 
+      @shifts = current_user.shifts.all
+    end 
+
+  end
   def hours
     @input = params[:search]
     @result = Hours.run(@input)
