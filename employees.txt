@@ -21,3 +21,13 @@ A new employee was added: Employee: Aisling O'Sullivan |  Server |  Anytime
 -----START-----
 A new employee was added: Employee: Rebecca Monaghan |  Bar Supervisor |  Anytime
 -----END-----
+-----start-----
+A new employee was added: Employee: ko |  ko |  ko
+-----end-----
+-----start-----
+A new employee was added: Employee: ko |  ko |  ko
+-----end-----
+-----start-----
+A new employee was added: Employee: ko |  ko |  ko
+-----end-----
+A new employee was added: Employee: Paddy Burke |  Head Server |  Weekends OnlyA new employee was added: Employee: Paddy Burke |  Head Server |  Weekends Only

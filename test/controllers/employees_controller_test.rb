@@ -6,21 +6,21 @@ class EmployeesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should get index" do
-    get employees_url
+    get employee_url
     assert_response :success
   end
 
   test "should get new" do
-    get new_employee_url
+    get employee_url
     assert_response :success
   end
 
   test "should create employee" do
     assert_difference('Employee.count') do
-      post employees_url, params: { employee: { availability: @employee.availability, name: @employee.name, position: @employee.position, user_id: @employee.user_id } }
+      post employee_url, params: { employee: { availability: @employee.availability, name: @employee.name, position: @employee.position, user_id: @employee.user_id } }
     end
 
-    assert_redirected_to employee_url(Employee.last)
+    assert_redirected_to employees_url(Employee.last)
   end
 
   test "should show employee" do

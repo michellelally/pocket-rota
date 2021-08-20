@@ -13,6 +13,8 @@ Rails.application.routes.draw do
   get 'dashboard' => 'dashboard#index'
 
   post '/hours', :controller=>'shifts', :action=>'hours'
+  post '/search', :controller=>'shifts', :action=>'search'
+  get '/search', :controller=>'shifts', :action=>'search'
 
   devise_for :users
   root to: 'home#index'

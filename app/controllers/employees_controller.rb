@@ -38,9 +38,9 @@ class EmployeesController < ApplicationController
     end
 
     @text = "A new employee was added: " + e.details
+    logger = FileWriter.instance
+    logger.logInformation(@text)
     
-    write = FileWriter.instance
-    write.logInfo(@text)
 
     respond_to do |format|
       if @employee.save

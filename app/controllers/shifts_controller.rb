@@ -6,27 +6,35 @@ class ShiftsController < ApplicationController
 
   # GET /shifts or /shifts.json
   def index
-    @shifts = current_user.shifts.all
-   
-  end
+    @shifts = current_user.shifts.all    
 
-
-  def search 
-    @shifts = current_user.shifts.all
-    @search = params[:term].present? ? params[:term] : '*'
+    search = params[:term].present? ? params[:term] : '*'
     @shifts = if search
-      Shift.search(@search)
+      Shift.search(search)
     else 
       @shifts = current_user.shifts.all
-    end 
-
+    end
   end
+
+  def search 
+    search = params[:term].present? ? params[:term] : '*'
+    @shifts = if search
+      Shift.search(search)
+      redirect_to request.referrer
+   
+    else 
+      @shifts = current_user.shifts.all
+      redirect_to request.referrer
+
+    end
+  end
+
   def hours
     @input = params[:search]
     @result = Hours.run(@input)
     flash[:notice] = @result
     redirect_to request.referrer
-    end
+  end
 
   # GET /shifts/1 or /shifts/1.json
   def show

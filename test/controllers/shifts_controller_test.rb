@@ -6,7 +6,7 @@ class ShiftsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should get index" do
-    get shifts_url
+    get shift_url
     assert_response :success
   end
 
@@ -17,7 +17,7 @@ class ShiftsControllerTest < ActionDispatch::IntegrationTest
 
   test "should create shift" do
     assert_difference('Shift.count') do
-      post shifts_url, params: { shift: { end_time: @shift.end_time, name: @shift.name, start_time: @shift.start_time, user_id: @shift.user_id } }
+      post shift_url, params: { shift: { end_time: @shift.end_time, name: @shift.name, start_time: @shift.start_time, user_id: @shift.user_id } }
     end
 
     assert_redirected_to shift_url(Shift.last)
