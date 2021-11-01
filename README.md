@@ -1,24 +1,8 @@
-# README
+# Pocket Rota
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Pocket Rota is Ruby on Rails application I designed for bar, restaurant and hotel managers to keep track of their employees and schedule shifts using a PostgreSQL database to allow CRUD functionality allowing the users to alter the data whenever necessary.
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Techbologies 
+- Ruby
+- Rails
+- Devise
